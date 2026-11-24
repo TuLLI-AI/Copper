@@ -63,6 +63,9 @@ python experiments/data_prep/prep_bbh.py --task salient_translation_error_detect
 
 ## 1. Interactive UI
 
+A web page where you can play around with different programs: generate one
+from a question, edit it, and run inference on it.
+
 ```bash
 streamlit run console.py
 ```
