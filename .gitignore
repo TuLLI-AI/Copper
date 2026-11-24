@@ -1,0 +1,11 @@
+.env
+.venv*/
+__pycache__/
+*.pyc
+.DS_Store
+results/
+logs/
+bbh_data/*
+!bbh_data/boolq/
+!bbh_data/strategyqa/
+.pytest_cache/

@@ -1,0 +1,19 @@
+# Versions verified end-to-end (fresh venv, Python 3.12.13, macOS/arm64):
+# library imports, Bayesian + Likelihood runners (live API + reuse mode),
+# HTML reports, and the Streamlit console.
+# For the exact transitive closure of that environment see requirements-lock.txt.
+numpy==1.26.4
+torch==2.14.0
+sympy==1.14.0
+pysdd==1.0.6
+astor==0.8.1
+dill==0.4.1
+pydantic==2.14.1
+pandas==3.0.6
+altair==6.3.0
+datasets==5.0.1
+tqdm==4.70.1
+openai==3.16.2
+together==1.5.35
+streamlit==1.64.0
+streamlit_code_editor==0.1.22
