@@ -69,7 +69,18 @@ streamlit run console.py
 
 ## 2. Running a single experiment
 
-**One base run** (calls the LLM, saves traces and a result for one configuration):
+**Likelihood program** (one standard CoT call per example):
+
+```bash
+python experiments/runners/run_vanilla_cot.py --model_name openai/gpt-4o \
+  --dataset_path bbh_data/boolq/multi_cot_test.json \
+  --output_dir results/vanilla/openai_gpt-4o/boolq_test
+```
+
+Its `summary.json` accuracy divides by the full dataset size, so a partial run
+(`--num_samples`) reports a low number.
+
+**Bayesian program: one base run** (calls the LLM, saves traces and a result for one configuration):
 
 ```bash
 python experiments/runners/run_BBH_multi_cot.py \
@@ -96,17 +107,6 @@ wrong; this is the same denominator the Likelihood runner uses, and the one
 to report. `accuracy_on_predicted` divides by the examples that produced a
 prediction (`n_predicted`) and is only a diagnostic: it is inflated whenever
 examples error, and error counts differ between configurations.
-
-**Likelihood program** (one standard CoT call per example):
-
-```bash
-python experiments/runners/run_vanilla_cot.py --model_name openai/gpt-4o \
-  --dataset_path bbh_data/boolq/multi_cot_test.json \
-  --output_dir results/vanilla/openai_gpt-4o/boolq_test
-```
-
-Its `summary.json` accuracy divides by the full dataset size, so a partial run
-(`--num_samples`) reports a low number.
 
 **Prompting baselines** (Direct / CoT / Combined CoT / Tree-of-Thoughts):
 
